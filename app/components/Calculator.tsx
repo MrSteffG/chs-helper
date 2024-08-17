@@ -44,17 +44,16 @@ const Calculator = () => {
   const averageShiftHours = 4;
 
   let requiredInstructors = Math.ceil(participants / ratios.TW);
-
   let staffSessionHours = requiredInstructors * sessionLength;
-
   let sessionCost = staffSessionHours * totalStaffWage;
 
-  let extraStaffHours =
-    extraStaffRequired + extraStaffRequired - requiredInstructors;
-
-  let totalCost = extraStaffRequired - requiredInstructors;
-
-  //   baseStaffSessionHours + wholeExtrainstructorShift
+  let usedStaffHours = extraStaffRequired * sessionLength;
+  let extraStaffHours = extraStaffRequired * averageShiftHours - usedStaffHours;
+  let extraStaffHoursCost = extraStaffHours * totalStaffWage;
+  let totalCost = sessionCost + extraStaffHoursCost;
+  let totalCostProfit = totalCost * 1.5;
+  let costPerParticipant =
+    Math.round((totalCostProfit / participants) * 100) / 100;
 
   return (
     <div className="flex w-2/3 items-center justify-center rounded-lg bg-slate-400 p-10">
@@ -67,7 +66,6 @@ const Calculator = () => {
             placeholder={participants.toString()}
             onChange={onChangeParticipants}
           />
-          {participants}
         </div>
         <div className="flex justify-between">
           Select activity type
@@ -82,7 +80,6 @@ const Calculator = () => {
             <option value="Bouldering">Bouldering</option>
             <option value="NICAS">NICAS</option>
           </select>
-          {activityType}
         </div>
         <div className="flex justify-between">
           Activity length (Hours)
@@ -96,7 +93,6 @@ const Calculator = () => {
             <option value="2.5">2.5</option>
             <option value="3">3</option>
           </select>
-          {sessionLength}
         </div>
         <div className="flex justify-between">
           Extra Staff Required
@@ -111,7 +107,6 @@ const Calculator = () => {
             <option value="5">5</option>
             <option value="6">6</option>
           </select>
-          {extraStaffRequired}
         </div>
         <div className="flex justify-center">Results</div>
         <div className="flex justify-center gap-5">
@@ -128,12 +123,20 @@ const Calculator = () => {
             <h3>£ {sessionCost}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3>Total cost</h3>
-            <h3>{totalCost}</h3>
+            <h3>Extra staff hours</h3>
+            <h3>{extraStaffHours}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3>Total cost + profit</h3>
-            <h3>£ {sessionCost * 1.5}</h3>
+            <h3>Total Cost</h3>
+            <h3>£ {totalCost}</h3>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3>Total Cost with profit</h3>
+            <h3>£ {totalCostProfit}</h3>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3>Cost per participant</h3>
+            <h3>£ {costPerParticipant}</h3>
           </div>
         </div>
       </div>
