@@ -9,13 +9,7 @@ const Calculator = () => {
     NICAS: 15,
   };
 
-  const ratios = {
-    "TW-Bouldering-AW": 6,
-    Bouldering: 9,
-    AW: 9,
-    NICAS: 4,
-  };
-
+  // Ratios
   const twBoulderingAw = 6;
   const boulderingAW = 9;
   const nicas = 4;
@@ -63,21 +57,23 @@ const Calculator = () => {
     Math.round((totalCostProfit / participants) * 100) / 100;
 
   return (
-    <div className="flex w-2/3 items-center justify-center rounded-lg bg-slate-400 p-10">
+    <div className="flex w-2/3 items-center justify-center rounded-2xl bg-slate-600 p-10 text-slate-200">
       <div className="flex w-4/5 flex-col gap-5">
         <div className="flex justify-between">
-          Participants
+          <h3 className="font-semibold">Participants</h3>
+
           <input
             type="number"
-            className="w-80 rounded-lg bg-slate-100 p-1 pl-2"
+            className="w-96 rounded-lg bg-slate-300 p-1 pl-2 text-black"
             placeholder={participants.toString()}
             onChange={onChangeParticipants}
           />
         </div>
         <div className="flex justify-between">
-          Select activity type
+          <h3 className="font-semibold">Activity Type</h3>
+
           <select
-            className="w-80 rounded-lg bg-slate-100 p-1"
+            className="w-96 rounded-lg bg-slate-300 p-1 pl-2 text-black"
             onChange={onChangeActivity}
           >
             <option value={twBoulderingAw}>
@@ -91,9 +87,10 @@ const Calculator = () => {
           </select>
         </div>
         <div className="flex justify-between">
-          Activity length (Hours)
+          <h3 className="font-semibold">Activity Length (Hours)</h3>
+
           <select
-            className="w-80 rounded-lg bg-slate-100 p-1"
+            className="w-96 rounded-lg bg-slate-300 p-1 pl-2 text-black"
             onChange={onChangeLength}
           >
             <option value="1">1</option>
@@ -104,9 +101,10 @@ const Calculator = () => {
           </select>
         </div>
         <div className="flex justify-between">
-          Extra Staff Required
+          <h3 className="font-semibold">Extra Staff Required</h3>
+
           <select
-            className="w-80 rounded-lg bg-slate-100 p-1"
+            className="w-96 rounded-lg bg-slate-300 p-1 pl-2 text-black"
             onChange={onChangeExtraStaff}
           >
             <option value="1">1</option>
@@ -117,35 +115,43 @@ const Calculator = () => {
             <option value="6">6</option>
           </select>
         </div>
-        <div className="flex justify-center">Results</div>
-        <div className="flex justify-center gap-5">
+        <div className="flex justify-center rounded-xl bg-slate-700">
           <div className="flex flex-col items-center">
-            <h3>Required Instructors</h3>
-            <h3>{requiredInstructors}</h3>
+            <h3 className="flex rounded-tl-lg bg-slate-800 text-center font-semibold">
+              Required Instructors
+            </h3>
+            <h3 className="p-3 font-semibold">{requiredInstructors}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3>Staff session hours</h3>
-            <h3>{staffSessionHours}</h3>
+            <h3 className="flex bg-slate-800 text-center font-semibold">
+              Staff session hours
+            </h3>
+            <h3 className="p-3 font-semibold">{staffSessionHours}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3>Session Cost</h3>
-            <h3>£ {sessionCost}</h3>
+            <h3 className="flex bg-slate-800 text-center font-semibold">
+              Session Cost
+            </h3>
+            <h3 className="p-3 font-semibold">£ {sessionCost}</h3>
+          </div>
+          {/* extra staff hours */}
+          <div className="flex flex-col items-center">
+            <h3 className="flex bg-slate-800 text-center font-semibold">
+              Total Cost
+            </h3>
+            <h3 className="p-3 font-semibold">£ {totalCost}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3>Extra staff hours</h3>
-            <h3>{extraStaffHours}</h3>
+            <h3 className="flex bg-slate-800 text-center font-semibold">
+              Total Cost with profit
+            </h3>
+            <h3 className="p-3 font-semibold">£ {totalCostProfit}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3>Total Cost</h3>
-            <h3>£ {totalCost}</h3>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3>Total Cost with profit</h3>
-            <h3>£ {totalCostProfit}</h3>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3>Cost per participant</h3>
-            <h3>£ {costPerParticipant}</h3>
+            <h3 className="flex rounded-tr-xl bg-slate-800 text-center font-semibold">
+              Cost per participant
+            </h3>
+            <h3 className="p-3 font-semibold">£ {costPerParticipant}</h3>
           </div>
         </div>
       </div>
