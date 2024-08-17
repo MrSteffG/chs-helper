@@ -14,7 +14,7 @@ const Calculator = () => {
   const boulderingAW = 9;
   const nicas = 4;
 
-  const [participants, setParticipants] = useState(8);
+  const [participants, setParticipants] = useState(1);
   const [activityType, setActivityType] = useState("TW-Bouldering-AW");
   const [sessionLength, setSessionLength] = useState(1);
   const [extraStaffRequired, setExtraStaffRequired] = useState(1);
@@ -44,10 +44,8 @@ const Calculator = () => {
   const averageShiftHours = 4;
 
   let requiredInstructors = Math.ceil(participants / ratio);
-
   let staffSessionHours = requiredInstructors * sessionLength;
   let sessionCost = staffSessionHours * totalStaffWage;
-
   let usedStaffHours = extraStaffRequired * sessionLength;
   let extraStaffHours = extraStaffRequired * averageShiftHours - usedStaffHours;
   let extraStaffHoursCost = extraStaffHours * totalStaffWage;
@@ -107,6 +105,7 @@ const Calculator = () => {
             className="w-96 rounded-lg bg-slate-300 p-1 pl-2 text-black"
             onChange={onChangeExtraStaff}
           >
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
