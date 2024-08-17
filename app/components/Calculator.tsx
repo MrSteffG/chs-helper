@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 const Calculator = () => {
   const standardPrices = {
@@ -15,8 +16,26 @@ const Calculator = () => {
     NICAS: 4,
   };
 
-  let participants = 8;
-  let sessionLength = 1;
+  const [participants, setParticipants] = useState(8);
+  const [activityType, setActivityType] = useState("TW-Bouldering-AW");
+  const [sessionLength, setSessionLength] = useState(1);
+  const [extraStaffRequired, setExtraStaffRequired] = useState(1);
+
+  const onChangeParticipants = (e: any) => {
+    setParticipants(e.target.value);
+  };
+
+  const onChangeActivity = (e: any) => {
+    setActivityType(e.target.value);
+  };
+
+  const onChangeLength = (e: any) => {
+    setSessionLength(e.target.value);
+  };
+
+  const onChangeExtraStaff = (e: any) => {
+    setExtraStaffRequired(e.target.value);
+  };
 
   //example data
   const staffWage = 10;
@@ -28,6 +47,15 @@ const Calculator = () => {
 
   let staffSessionHours = requiredInstructors * sessionLength;
 
+  let sessionCost = staffSessionHours * totalStaffWage;
+
+  let extraStaffHours =
+    extraStaffRequired + extraStaffRequired - requiredInstructors;
+
+  let totalCost = extraStaffRequired - requiredInstructors;
+
+  //   baseStaffSessionHours + wholeExtrainstructorShift
+
   return (
     <div className="flex w-2/3 items-center justify-center rounded-lg bg-slate-400 p-10">
       <div className="flex w-4/5 flex-col gap-5">
@@ -37,11 +65,16 @@ const Calculator = () => {
             type="number"
             className="w-80 rounded-lg bg-slate-100 p-1 pl-2"
             placeholder={participants.toString()}
+            onChange={onChangeParticipants}
           />
+          {participants}
         </div>
         <div className="flex justify-between">
           Select activity type
-          <select className="w-80 rounded-lg bg-slate-100 p-1">
+          <select
+            className="w-80 rounded-lg bg-slate-100 p-1"
+            onChange={onChangeActivity}
+          >
             <option value="TW-Bouldering-Aw">
               Tall Walls, Bouldering & Action Walls
             </option>
@@ -49,16 +82,36 @@ const Calculator = () => {
             <option value="Bouldering">Bouldering</option>
             <option value="NICAS">NICAS</option>
           </select>
+          {activityType}
         </div>
         <div className="flex justify-between">
           Activity length (Hours)
-          <select className="w-80 rounded-lg bg-slate-100 p-1">
+          <select
+            className="w-80 rounded-lg bg-slate-100 p-1"
+            onChange={onChangeLength}
+          >
             <option value="1">1</option>
             <option value="1.5">1.5</option>
             <option value="2">2</option>
             <option value="2.5">2.5</option>
             <option value="3">3</option>
           </select>
+          {sessionLength}
+        </div>
+        <div className="flex justify-between">
+          Extra Staff Required
+          <select
+            className="w-80 rounded-lg bg-slate-100 p-1"
+            onChange={onChangeExtraStaff}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          {extraStaffRequired}
         </div>
         <div className="flex justify-center">Results</div>
         <div className="flex justify-center gap-5">
@@ -69,6 +122,18 @@ const Calculator = () => {
           <div className="flex flex-col items-center">
             <h3>Staff session hours</h3>
             <h3>{staffSessionHours}</h3>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3>Session Cost</h3>
+            <h3>£ {sessionCost}</h3>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3>Total cost</h3>
+            <h3>{totalCost}</h3>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3>Total cost + profit</h3>
+            <h3>£ {sessionCost * 1.5}</h3>
           </div>
         </div>
       </div>
