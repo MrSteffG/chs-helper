@@ -10,16 +10,21 @@ const Calculator = () => {
   };
 
   const ratios = {
-    TW: 6,
+    "TW-Bouldering-AW": 6,
     Bouldering: 9,
     AW: 9,
     NICAS: 4,
   };
 
+  const twBoulderingAw = 6;
+  const boulderingAW = 9;
+  const nicas = 4;
+
   const [participants, setParticipants] = useState(8);
   const [activityType, setActivityType] = useState("TW-Bouldering-AW");
   const [sessionLength, setSessionLength] = useState(1);
   const [extraStaffRequired, setExtraStaffRequired] = useState(1);
+  const [ratio, setRatio] = useState(twBoulderingAw);
 
   const onChangeParticipants = (e: any) => {
     setParticipants(e.target.value);
@@ -27,6 +32,7 @@ const Calculator = () => {
 
   const onChangeActivity = (e: any) => {
     setActivityType(e.target.value);
+    setRatio(e.target.value);
   };
 
   const onChangeLength = (e: any) => {
@@ -43,7 +49,8 @@ const Calculator = () => {
   const totalStaffWage = staffWage + staffWageExtraCosts;
   const averageShiftHours = 4;
 
-  let requiredInstructors = Math.ceil(participants / ratios.TW);
+  let requiredInstructors = Math.ceil(participants / ratio);
+
   let staffSessionHours = requiredInstructors * sessionLength;
   let sessionCost = staffSessionHours * totalStaffWage;
 
@@ -73,12 +80,14 @@ const Calculator = () => {
             className="w-80 rounded-lg bg-slate-100 p-1"
             onChange={onChangeActivity}
           >
-            <option value="TW-Bouldering-Aw">
+            <option value={twBoulderingAw}>
               Tall Walls, Bouldering & Action Walls
             </option>
-            <option value="Bouldering-Aw">Bouldering & Action Walls</option>
-            <option value="Bouldering">Bouldering</option>
-            <option value="NICAS">NICAS</option>
+            <option value={boulderingAW}>Action Walls & Bouldering</option>
+            <option value={boulderingAW}>Action Walls</option>
+            <option value={boulderingAW}>Bouldering</option>
+
+            <option value={nicas}>NICAS</option>
           </select>
         </div>
         <div className="flex justify-between">
