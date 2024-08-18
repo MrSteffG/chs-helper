@@ -5,7 +5,7 @@ import DuesCalculator from "./components/DuesCalculator";
 
 export default function Home() {
   return (
-    <div className="flex h-full w-full flex-col items-center gap-10 dark:bg-slate-700">
+    <div className="flex h-full w-full flex-col items-center gap-10 bg-amber-50 dark:bg-slate-700">
       <Navbar />
       {/* <Functionality /> */}
       <DuesCalculator />

@@ -71,10 +71,13 @@ const DuesCalculator = () => {
   };
 
   return (
-    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl bg-slate-50 p-10 dark:bg-slate-600 dark:text-white">
-      <h3 className="flex gap-5">Todays Date is {todaysDate.toString()}</h3>
+    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl border bg-white p-10 dark:bg-slate-600 dark:text-white">
+      <h3 className="flex text-xl font-semibold">Membership Dues</h3>
+      <h3 className="flex font-light">
+        Todays Date is {todaysDate.toString()}
+      </h3>
       <div className="flex w-4/5 items-center justify-around rounded-2xl p-3 dark:bg-slate-800">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-5">
           <h2 className="font-semibold">Bouldering</h2>
           <div className="flex items-center justify-center gap-5 text-center">
             <div className="flex flex-col gap-1">
@@ -87,7 +90,7 @@ const DuesCalculator = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-5">
           <h3 className="font-semibold">Tall Walls</h3>
           <div className="flex items-center justify-center gap-5 text-center">
             <div className="flex flex-col gap-1">
@@ -100,7 +103,7 @@ const DuesCalculator = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-5">
           <h3 className="font-semibold">Add-on</h3>
           <div className="flex items-center justify-center gap-5 text-center">
             <div className="flex flex-col gap-1">
