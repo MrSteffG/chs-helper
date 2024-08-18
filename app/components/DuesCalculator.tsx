@@ -71,7 +71,7 @@ const DuesCalculator = () => {
   };
 
   return (
-    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl border bg-white p-10 max-lg:w-4/5 dark:bg-slate-600 dark:text-white">
+    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl border bg-white p-10 max-lg:w-5/6 dark:bg-slate-600 dark:text-white">
       <h3 className="flex text-xl font-semibold">Membership Dues</h3>
       <h3 className="flex text-center font-light">
         Todays Date is {todaysDate.toString()}
