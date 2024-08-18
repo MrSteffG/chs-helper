@@ -56,50 +56,56 @@ const DuesCalculator = () => {
     );
   };
 
+  const dateLogicTests = () => {
+    return (
+      <div className="flex flex-col">
+        <h3>Date logic tests</h3>
+        <p>thisMonth = {thisMonth}</p>
+        <p>thisMonthDays = {thisMonthDays}</p>
+        <p>nextMonth = {nextMonth}</p>
+        <p>nextMonthDays = {nextMonthDays}</p>
+        <p>todaysDay = {todaysDay}</p>
+        <p>daysToEndOfNextMonth = {daysToEndOfNextMonth}</p>
+      </div>
+    );
+  };
+
   return (
     <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-2xl bg-slate-600 p-10 text-white">
       <h3 className="flex gap-5">Todays Date is {todaysDate.toString()}</h3>
-      <h3>Date logic tests</h3>
-      <p>thisMonth = {thisMonth}</p>
-      <p>thisMonthDays = {thisMonthDays}</p>
-      <p>nextMonth = {nextMonth}</p>
-      <p>nextMonthDays = {nextMonthDays}</p>
-      <p>todaysDay = {todaysDay}</p>
-      <p>daysToEndOfNextMonth = {daysToEndOfNextMonth}</p>
-
-      <div className="flex w-4/5 items-center justify-around rounded-2xl">
+      <div className="flex w-4/5 items-center justify-around rounded-2xl bg-slate-800 p-3">
         <div className="flex flex-col items-center justify-center">
-          Bouldering
-          <div className="flex gap-5">
-            <div className="flex flex-col">
+          <h2 className="font-semibold">Bouldering</h2>
+          <div className="flex items-center justify-center gap-5 text-center">
+            <div className="flex flex-col gap-1">
               <h3>Adult</h3>
-              <p>{duesMultiplier(adultBouldering)}</p>
+              <p>£ {duesMultiplier(adultBouldering)}</p>
             </div>
-            <div className="flex flex-col">
-              <h3>Under 18 / Concession</h3>
-              <p>{duesMultiplier(concessionBouldering)}</p>
+            <div className="flex flex-col gap-1">
+              <h3>Concession</h3>
+              <p>£ {duesMultiplier(concessionBouldering)}</p>
             </div>
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
-          Sport
-          <div className="flex gap-5">
-            <div className="flex flex-col">
+          <h3 className="font-semibold">Tall Walls</h3>
+          <div className="flex items-center justify-center gap-5 text-center">
+            <div className="flex flex-col gap-1">
               <h3>Adult</h3>
-              <p>{duesMultiplier(adultSport)}</p>
+              <p>£ {duesMultiplier(adultSport)}</p>
             </div>
-            <div className="flex flex-col">
-              <h3>Under 18 / Concession</h3>
-              <p>{duesMultiplier(concessionSport)}</p>
+            <div className="flex flex-col gap-1">
+              <h3>Concession</h3>
+              <p>£ {duesMultiplier(concessionSport)}</p>
             </div>
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
-          Add-on
-          <div className="flex gap-5">
-            <div className="flex flex-col">
+          <h3 className="font-semibold">Add-on</h3>
+          <div className="flex items-center justify-center gap-5 text-center">
+            <div className="flex flex-col gap-1">
               <h3>Under 18 / NICAS</h3>
-              <p>{duesMultiplier(addon)}</p>
+              <p>£ {duesMultiplier(addon)}</p>
             </div>
           </div>
         </div>
