@@ -71,12 +71,12 @@ const DuesCalculator = () => {
   };
 
   return (
-    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl border bg-white p-10 dark:bg-slate-600 dark:text-white">
+    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl border bg-white p-10 max-lg:w-4/5 dark:bg-slate-600 dark:text-white">
       <h3 className="flex text-xl font-semibold">Membership Dues</h3>
-      <h3 className="flex font-light">
+      <h3 className="flex text-center font-light">
         Todays Date is {todaysDate.toString()}
       </h3>
-      <div className="flex w-4/5 items-center justify-around rounded-2xl p-3 dark:bg-slate-800">
+      <div className="flex w-4/5 items-center justify-around gap-5 rounded-2xl p-3 max-lg:flex-col dark:bg-slate-800">
         <div className="flex flex-col items-center justify-center gap-5">
           <h2 className="font-semibold">Bouldering</h2>
           <div className="flex items-center justify-center gap-5 text-center">

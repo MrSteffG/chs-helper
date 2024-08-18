@@ -55,27 +55,27 @@ const Calculator = () => {
     Math.round((totalCostProfit / participants) * 100) / 100;
 
   return (
-    <div className="flex w-2/3 items-center justify-center rounded-2xl border bg-white p-10 dark:bg-slate-600 dark:text-slate-200">
+    <div className="flex w-2/3 items-center justify-center rounded-2xl border bg-white p-10 max-lg:w-4/5 dark:bg-slate-600 dark:text-slate-200">
       <div className="flex w-4/5 flex-col gap-5">
         <h3 className="flex self-center text-xl font-semibold">
           Groups Calculator
         </h3>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-5 max-lg:flex-col">
           <h3 className="font-semibold">Participants</h3>
 
           <input
             type="number"
-            className="w-96 rounded-lg bg-stone-100 p-1 pl-2 text-black dark:bg-slate-300"
+            className="w-96 rounded-lg bg-stone-100 p-1 pl-2 text-black max-lg:w-full dark:bg-slate-300"
             defaultValue={1}
             onChange={onChangeParticipants}
           />
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-5 max-lg:flex-col">
           <h3 className="font-semibold">Activity Type</h3>
 
           <select
-            className="w-96 rounded-lg bg-stone-100 p-1 pl-2 text-black dark:bg-slate-300"
+            className="w-96 rounded-lg bg-stone-100 p-1 pl-2 text-black max-lg:w-full dark:bg-slate-300"
             onChange={onChangeActivity}
           >
             <option value={twBoulderingAw}>
@@ -88,11 +88,11 @@ const Calculator = () => {
             <option value={nicas}>NICAS</option>
           </select>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-5 max-lg:flex-col">
           <h3 className="font-semibold">Activity Length (Hours)</h3>
 
           <select
-            className="w-96 rounded-lg bg-stone-100 p-1 pl-2 text-black dark:bg-slate-300"
+            className="w-96 rounded-lg bg-stone-100 p-1 pl-2 text-black max-lg:w-full dark:bg-slate-300"
             onChange={onChangeLength}
           >
             <option value="1">1</option>
@@ -102,11 +102,11 @@ const Calculator = () => {
             <option value="3">3</option>
           </select>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-5 max-lg:flex-col">
           <h3 className="font-semibold">Extra Staff Required</h3>
 
           <select
-            className="w-96 rounded-lg bg-stone-100 p-1 pl-2 text-black dark:bg-slate-300"
+            className="w-96 rounded-lg bg-stone-100 p-1 pl-2 text-black max-lg:w-full dark:bg-slate-300"
             onChange={onChangeExtraStaff}
           >
             <option value="0">0</option>
@@ -121,43 +121,43 @@ const Calculator = () => {
         <div id="gap div" className="opacity-0">
           Value
         </div>
-        <div className="flex justify-center rounded-xl dark:bg-slate-700">
+        <div className="flex justify-center gap-5 rounded-xl max-lg:flex-col dark:bg-slate-700">
           <div className="flex flex-col items-center">
             <h3 className="flex rounded-tl-lg text-center font-semibold dark:bg-slate-800">
               Required Instructors
             </h3>
-            <h3 className="p-3 font-semibold">{requiredInstructors}</h3>
+            <h3 className="p-3">{requiredInstructors}</h3>
           </div>
           <div className="flex flex-col items-center">
             <h3 className="flex text-center font-semibold dark:bg-slate-800">
               Staff session hours
             </h3>
-            <h3 className="p-3 font-semibold">{staffSessionHours}</h3>
+            <h3 className="p-3">{staffSessionHours}</h3>
           </div>
           <div className="flex flex-col items-center">
             <h3 className="flex text-center font-semibold dark:bg-slate-800">
               Session Cost
             </h3>
-            <h3 className="p-3 font-semibold">£ {sessionCost}</h3>
+            <h3 className="p-3">£ {sessionCost}</h3>
           </div>
           {/* extra staff hours */}
           <div className="flex flex-col items-center">
             <h3 className="flex text-center font-semibold dark:bg-slate-800">
               Total Cost
             </h3>
-            <h3 className="p-3 font-semibold">£ {totalCost}</h3>
+            <h3 className="p-3">£ {totalCost}</h3>
           </div>
           <div className="flex flex-col items-center">
             <h3 className="flex text-center font-semibold dark:bg-slate-800">
               Total Cost with profit
             </h3>
-            <h3 className="p-3 font-semibold">£ {totalCostProfit}</h3>
+            <h3 className="p-3">£ {totalCostProfit}</h3>
           </div>
           <div className="flex flex-col items-center">
             <h3 className="flex rounded-tr-xl text-center font-semibold dark:bg-slate-800">
               Cost per participant
             </h3>
-            <h3 className="p-3 font-semibold">£ {costPerParticipant}</h3>
+            <h3 className="p-3">£ {costPerParticipant}</h3>
           </div>
         </div>
       </div>

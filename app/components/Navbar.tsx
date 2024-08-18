@@ -19,7 +19,7 @@ const Navbar = () => {
           </button>
           <SignedOut>
             <SignInButton>
-              <h3 className="rounded-md bg-yellow-300 p-1 px-3 text-lg text-black transition-all hover:scale-105">
+              <h3 className="rounded-md bg-yellow-300 p-1 px-3 text-lg text-black transition-all hover:scale-105 hover:cursor-pointer">
                 Log in
               </h3>
             </SignInButton>
