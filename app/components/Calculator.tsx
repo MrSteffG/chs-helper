@@ -121,40 +121,40 @@ const Calculator = () => {
         <div id="gap div" className="opacity-0">
           Value
         </div>
-        <div className="flex justify-center gap-5 rounded-xl max-lg:flex-col dark:bg-slate-700">
+        <div className="flex justify-center rounded-xl bg-stone-100 max-lg:flex-col max-lg:gap-5 dark:bg-slate-700">
           <div className="flex flex-col items-center">
-            <h3 className="flex rounded-tl-lg text-center font-semibold dark:bg-slate-800">
+            <h3 className="flex justify-center rounded-tl-lg bg-stone-200 text-center font-semibold max-lg:w-full max-lg:rounded-t-lg dark:bg-slate-800">
               Required Instructors
             </h3>
             <h3 className="p-3">{requiredInstructors}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="flex text-center font-semibold dark:bg-slate-800">
-              Staff session hours
+            <h3 className="flex justify-center bg-stone-200 text-center font-semibold max-lg:w-full dark:bg-slate-800">
+              Staff Hours
             </h3>
             <h3 className="p-3">{staffSessionHours}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="flex text-center font-semibold dark:bg-slate-800">
+            <h3 className="flex justify-center bg-stone-200 text-center font-semibold max-lg:w-full dark:bg-slate-800">
               Session Cost
             </h3>
             <h3 className="p-3">£ {sessionCost}</h3>
           </div>
           {/* extra staff hours */}
           <div className="flex flex-col items-center">
-            <h3 className="flex text-center font-semibold dark:bg-slate-800">
+            <h3 className="flex justify-center bg-stone-200 text-center font-semibold max-lg:w-full dark:bg-slate-800">
               Total Cost
             </h3>
             <h3 className="p-3">£ {totalCost}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="flex text-center font-semibold dark:bg-slate-800">
+            <h3 className="flex justify-center bg-stone-200 text-center font-semibold max-lg:w-full dark:bg-slate-800">
               Total Cost with profit
             </h3>
             <h3 className="p-3">£ {totalCostProfit}</h3>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="flex rounded-tr-xl text-center font-semibold dark:bg-slate-800">
+            <h3 className="flex justify-center rounded-tr-xl bg-stone-200 text-center font-semibold max-lg:w-full max-lg:rounded-none dark:bg-slate-800">
               Cost per participant
             </h3>
             <h3 className="p-3">£ {costPerParticipant}</h3>
