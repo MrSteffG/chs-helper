@@ -71,9 +71,9 @@ const DuesCalculator = () => {
   };
 
   return (
-    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-2xl bg-slate-600 p-10 text-white">
+    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl bg-slate-50 p-10 dark:bg-slate-600 dark:text-white">
       <h3 className="flex gap-5">Todays Date is {todaysDate.toString()}</h3>
-      <div className="flex w-4/5 items-center justify-around rounded-2xl bg-slate-800 p-3">
+      <div className="flex w-4/5 items-center justify-around rounded-2xl p-3 dark:bg-slate-800">
         <div className="flex flex-col items-center justify-center">
           <h2 className="font-semibold">Bouldering</h2>
           <div className="flex items-center justify-center gap-5 text-center">
