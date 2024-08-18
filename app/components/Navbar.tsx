@@ -14,8 +14,6 @@ const Navbar = () => {
       <div className="flex w-2/3 items-center justify-between">
         <h1 className="text-lg font-semibold">CHS Helper</h1>
         <div className="flex items-center justify-center gap-10 p-5 font-extralight">
-          <h3>Groups Calculator</h3>
-          <h3>Monthly Dues</h3>
           <button onClick={toggleTheme}>
             <CiLight />
           </button>

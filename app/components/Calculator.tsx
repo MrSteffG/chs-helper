@@ -57,6 +57,10 @@ const Calculator = () => {
   return (
     <div className="flex w-2/3 items-center justify-center rounded-2xl border bg-white p-10 dark:bg-slate-600 dark:text-slate-200">
       <div className="flex w-4/5 flex-col gap-5">
+        <h3 className="flex self-center text-xl font-semibold">
+          Groups Calculator
+        </h3>
+
         <div className="flex justify-between">
           <h3 className="font-semibold">Participants</h3>
 
