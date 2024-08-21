@@ -1,12 +1,10 @@
-import Functionality from "./components/Functionality";
-import Navbar from "./components/Navbar";
-import Calculator from "./components/Calculator";
-import DuesCalculator from "./components/DuesCalculator";
-import Footer from "./components/Footer";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
-import WelcomePage from "./components/WelcomePage";
+import Navbar from "../components/Navbar";
 
-export default function Home() {
+import Footer from "../components/Footer";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Calculator from "../components/Calculator";
+
+export default function groupcalc() {
   return (
     <div className="bg-opacity flex h-full w-full flex-col items-center gap-10 bg-stone-100 dark:bg-slate-700">
       <Navbar />
@@ -15,7 +13,8 @@ export default function Home() {
         <WelcomePage />
       </SignedOut> */}
       {/* <SignedIn> */}
-      <DuesCalculator />
+      <Calculator />
+
       {/* </SignedIn> */}
       <Footer />
     </div>

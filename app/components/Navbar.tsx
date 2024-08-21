@@ -3,6 +3,7 @@
 import React from "react";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { CiLight } from "react-icons/ci";
+import Link from "next/link";
 
 const Navbar = () => {
   const toggleTheme = () => {
@@ -12,8 +13,17 @@ const Navbar = () => {
   return (
     <div className="flex w-full items-center justify-center border-b bg-white dark:bg-slate-800 dark:text-white">
       <div className="flex w-2/3 items-center justify-between">
-        <h1 className="text-lg font-semibold">CHS Helper</h1>
+        <Link href="/">
+          <h1 className="text-lg font-semibold">CHS Helper</h1>
+        </Link>
+
         <div className="flex items-center justify-center gap-10 p-5 font-extralight">
+          <Link href="/">
+            <h3 className="text-sm">Memberships</h3>
+          </Link>
+          <Link href="/groupcalc">
+            <h3 className="text-sm">Groups Calculator</h3>
+          </Link>
           <button onClick={toggleTheme}>
             <CiLight />
           </button>

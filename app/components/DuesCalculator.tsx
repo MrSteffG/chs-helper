@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { FaClipboard } from "react-icons/fa";
 
 const DuesCalculator = () => {
   //Prices
@@ -70,23 +73,42 @@ const DuesCalculator = () => {
     );
   };
 
+  const adultBoulderingRes = duesMultiplier(adultBouldering);
+  const concBoulderingRes = duesMultiplier(concessionBouldering);
+  const adultSportRes = duesMultiplier(adultSport);
+  const concSportRes = duesMultiplier(concessionSport);
+  const addonRes = duesMultiplier(addon);
+
+  const copyFuncAB = (data: any) =>
+    navigator.clipboard.writeText(data.toString());
+
   return (
-    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl border bg-white p-10 max-lg:w-5/6 dark:bg-slate-600 dark:text-white">
+    <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl border bg-white p-10 dark:bg-slate-600 dark:text-white max-lg:w-5/6">
       <h3 className="flex text-xl font-semibold">Membership Dues</h3>
       <h3 className="flex text-center font-light">
         Todays Date is {todaysDate.toString()}
       </h3>
-      <div className="flex w-4/5 items-center justify-around gap-5 rounded-2xl p-3 max-lg:flex-col dark:bg-slate-800">
+      <div className="flex w-4/5 items-center justify-around gap-5 rounded-2xl p-3 dark:bg-slate-800 max-lg:flex-col">
         <div className="flex flex-col items-center justify-center gap-5">
           <h2 className="font-semibold">Bouldering</h2>
           <div className="flex items-center justify-center gap-5 text-center">
             <div className="flex flex-col gap-1">
               <h3>Adult</h3>
-              <p>£ {duesMultiplier(adultBouldering)}</p>
+              <p
+                onClick={() => copyFuncAB(adultBoulderingRes)}
+                className="flex cursor-pointer items-center justify-center rounded-md bg-stone-100 p-2 hover:bg-stone-200 dark:bg-slate-600 dark:hover:bg-slate-700"
+              >
+                £ {duesMultiplier(adultBouldering)}
+              </p>
             </div>
             <div className="flex flex-col gap-1">
               <h3>Concession</h3>
-              <p>£ {duesMultiplier(concessionBouldering)}</p>
+              <p
+                onClick={() => copyFuncAB(concBoulderingRes)}
+                className="flex cursor-pointer items-center justify-center rounded-md bg-stone-100 p-2 hover:bg-stone-200 dark:bg-slate-600 dark:hover:bg-slate-700"
+              >
+                £ {duesMultiplier(concessionBouldering)}
+              </p>
             </div>
           </div>
         </div>
@@ -95,11 +117,21 @@ const DuesCalculator = () => {
           <div className="flex items-center justify-center gap-5 text-center">
             <div className="flex flex-col gap-1">
               <h3>Adult</h3>
-              <p>£ {duesMultiplier(adultSport)}</p>
+              <p
+                onClick={() => copyFuncAB(adultSportRes)}
+                className="flex cursor-pointer items-center justify-center rounded-md bg-stone-100 p-2 hover:bg-stone-200 dark:bg-slate-600 dark:hover:bg-slate-700"
+              >
+                £ {duesMultiplier(adultSport)}
+              </p>
             </div>
             <div className="flex flex-col gap-1">
               <h3>Concession</h3>
-              <p>£ {duesMultiplier(concessionSport)}</p>
+              <p
+                onClick={() => copyFuncAB(concSportRes)}
+                className="flex cursor-pointer items-center justify-center rounded-md bg-stone-100 p-2 hover:bg-stone-200 dark:bg-slate-600 dark:hover:bg-slate-700"
+              >
+                £ {duesMultiplier(concessionSport)}
+              </p>
             </div>
           </div>
         </div>
@@ -108,7 +140,12 @@ const DuesCalculator = () => {
           <div className="flex items-center justify-center gap-5 text-center">
             <div className="flex flex-col gap-1">
               <h3>Under 18 / NICAS</h3>
-              <p>£ {duesMultiplier(addon)}</p>
+              <p
+                onClick={() => copyFuncAB(addonRes)}
+                className="flex cursor-pointer items-center justify-center rounded-md bg-stone-100 p-2 hover:bg-stone-200 dark:bg-slate-600 dark:hover:bg-slate-700"
+              >
+                £ {duesMultiplier(addon)}
+              </p>
             </div>
           </div>
         </div>
