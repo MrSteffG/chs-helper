@@ -11,6 +11,8 @@ import {
 
 import { Calendar } from "@/components/ui/calendar";
 
+import Test from "../FAQ/Test.mdx";
+
 const DuesCalculator = () => {
   //Prices
   const adultBouldering = 44;
@@ -114,7 +116,7 @@ const DuesCalculator = () => {
           <PopoverTrigger className="rounded-md bg-stone-100 p-1 dark:bg-slate-800">
             Change Date
           </PopoverTrigger>
-          <PopoverContent>
+          <PopoverContent className="w-full">
             <DatePicker />
           </PopoverContent>
         </Popover>
@@ -181,6 +183,9 @@ const DuesCalculator = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="prose">
+        <Test />
       </div>
     </div>
   );
