@@ -1,7 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { FaClipboard } from "react-icons/fa";
+
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+import { Calendar } from "@/components/ui/calendar";
 
 const DuesCalculator = () => {
   //Prices
@@ -13,10 +21,12 @@ const DuesCalculator = () => {
 
   // Date variables
   //TODO: Modifiable date
-  const todaysDate = new Date();
-  const todaysDay = todaysDate.getDate();
-  const thisMonth = todaysDate.getMonth();
-  const nextMonth = thisMonth + 1;
+
+  const [todaysDate, setTodaysDate] = useState<Date | undefined>(new Date());
+  // let todaysDate = new Date();
+  const todaysDay = todaysDate?.getDate();
+  const thisMonth = todaysDate?.getMonth();
+  const nextMonth = thisMonth! + 1;
 
   const daysInMonth = (month: number) => {
     switch (month) {
@@ -47,10 +57,10 @@ const DuesCalculator = () => {
     }
   };
 
-  const thisMonthDays = daysInMonth(thisMonth);
+  const thisMonthDays = daysInMonth(thisMonth!);
   const nextMonthDays: any = daysInMonth(nextMonth);
 
-  const daysToEndOfNextMonth = nextMonthDays - todaysDay + 1; //Add extra day to account for current day
+  const daysToEndOfNextMonth = nextMonthDays - todaysDay! + 1; //Add extra day to account for current day
 
   const duesMultiplier = (membershipType: number) => {
     return (
@@ -84,12 +94,32 @@ const DuesCalculator = () => {
   const copyFuncAB = (data: any) =>
     navigator.clipboard.writeText(data.toString());
 
+  const DatePicker = () => {
+    return (
+      <Calendar
+        mode="single"
+        selected={todaysDate}
+        onSelect={setTodaysDate}
+        className="rounded-md border"
+      />
+    );
+  };
+
   return (
     <div className="flex w-2/3 flex-col items-center justify-center gap-5 rounded-xl border bg-white p-10 dark:bg-slate-600 dark:text-white max-lg:w-5/6">
       <h3 className="flex text-xl font-semibold">Membership Dues</h3>
-      <h3 className="flex text-center font-light">
-        Todays Date is {todaysDate.toString()}
+      <h3 className="flex items-center gap-5 text-center font-light">
+        Todays Date is {todaysDate?.toString().substring(0, 16)}
+        <Popover>
+          <PopoverTrigger className="rounded-md bg-stone-100 p-1 dark:bg-slate-800">
+            Change Date
+          </PopoverTrigger>
+          <PopoverContent>
+            <DatePicker />
+          </PopoverContent>
+        </Popover>
       </h3>
+
       <div className="flex w-4/5 items-center justify-around gap-5 rounded-2xl p-3 dark:bg-slate-800 max-lg:flex-col">
         <div className="flex flex-col items-center justify-center gap-5">
           <h2 className="font-semibold">Bouldering</h2>

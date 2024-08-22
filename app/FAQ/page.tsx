@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import WelcomePage from "../components/WelcomePage";
-import CodeSample from "./Code Sample.mdx";
 import Test from "./Test.mdx";
 
 export default function FAQ() {
