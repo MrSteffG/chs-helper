@@ -184,9 +184,6 @@ const DuesCalculator = () => {
           </div>
         </div>
       </div>
-      <div className="prose">
-        <Test />
-      </div>
     </div>
   );
 };
