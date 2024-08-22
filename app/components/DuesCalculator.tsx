@@ -11,9 +11,10 @@ const DuesCalculator = () => {
   const concessionSport = 40;
   const addon = 16;
 
+  // Date variables
+  //TODO: Modifiable date
   const todaysDate = new Date();
   const todaysDay = todaysDate.getDate();
-
   const thisMonth = todaysDate.getMonth();
   const nextMonth = thisMonth + 1;
 
@@ -48,8 +49,8 @@ const DuesCalculator = () => {
 
   const thisMonthDays = daysInMonth(thisMonth);
   const nextMonthDays: any = daysInMonth(nextMonth);
-  //Add extra day to account for today
-  const daysToEndOfNextMonth = nextMonthDays - todaysDay + 1;
+
+  const daysToEndOfNextMonth = nextMonthDays - todaysDay + 1; //Add extra day to account for current day
 
   const duesMultiplier = (membershipType: number) => {
     return (
@@ -59,6 +60,7 @@ const DuesCalculator = () => {
     );
   };
 
+  //Used for testing steps that determine the amounts due
   const dateLogicTests = () => {
     return (
       <div className="flex flex-col">
