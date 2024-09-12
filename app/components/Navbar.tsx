@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FaHamburger } from "react-icons/fa";
 
 const Navbar = () => {
-  const [hamburger, setHamburger] = useState(true);
+  const [hamburger, setHamburger] = useState(false);
 
   const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
