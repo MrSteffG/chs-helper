@@ -24,6 +24,9 @@ const Navbar = () => {
           <Link href="/groupcalc">
             <h3 className="text-sm">Groups Calculator</h3>
           </Link>
+          {/* <Link href="/FAQ">
+            <h3 className="text-sm">FAQ</h3>
+          </Link> */}
           <button onClick={toggleTheme}>
             <CiLight />
           </button>

@@ -11,6 +11,9 @@ const Footer = () => {
           target="_blank"
         >
           <FaGithub />
+          <h3 className="text-sm font-light">
+            Designed & Built by Steff Gornall
+          </h3>
         </a>
       </div>
     </div>

@@ -6,7 +6,7 @@ import Calculator from "../components/Calculator";
 
 export default function groupcalc() {
   return (
-    <div className="bg-opacity flex h-full w-full flex-col items-center gap-10 bg-stone-100 dark:bg-slate-700">
+    <div className="bg-opacity flex min-h-screen w-full flex-col items-center justify-between gap-10 bg-stone-100 dark:bg-slate-700">
       <Navbar />
       {/* <Functionality /> */}
       {/* <SignedOut>

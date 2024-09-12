@@ -9,9 +9,8 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Climbing Hut",
-  description:
-    "Boilerplate application bootstrapped with Next.js, Supabase & Clerk.",
+  title: "Climbing Hut Helper",
+  description: "Helper application for CHS tasks",
 };
 
 export default function RootLayout({
@@ -22,7 +21,11 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <div className="min-h-screen bg-white dark:bg-slate-800">
+            {children}
+          </div>
+        </body>
       </html>
     </ClerkProvider>
   );

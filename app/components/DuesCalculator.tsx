@@ -113,7 +113,7 @@ const DuesCalculator = () => {
       <h3 className="flex items-center gap-5 text-center font-light">
         Todays Date is {todaysDate?.toString().substring(0, 16)}
         <Popover>
-          <PopoverTrigger className="rounded-md bg-stone-100 p-1 dark:bg-slate-800">
+          <PopoverTrigger className="rounded-md bg-stone-100 p-2 dark:bg-slate-800">
             Change Date
           </PopoverTrigger>
           <PopoverContent className="w-full">
