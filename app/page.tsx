@@ -19,6 +19,7 @@ export default function Home() {
         <WelcomePage />
       </SignedOut> */}
       {/* <SignedIn> */}
+
       <DuesCalculator />
       <div className="flex w-2/3 flex-col items-center justify-start rounded-2xl border bg-white p-10 dark:bg-slate-600 max-lg:w-5/6">
         <div className="flex w-2/3 items-center justify-between gap-2 font-semibold">
