@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import * as Supervision from "../articles/Supervision.mdx";
+
 import * as Memberships from "../articles/ProcessingMemberships.mdx";
 
 import { useState } from "react";
@@ -39,8 +40,11 @@ export default function FAQ() {
   return (
     <div className="bg-opacity flex h-full w-full flex-col items-center gap-10 bg-stone-100 dark:bg-slate-700">
       <Navbar />
-      <Article title={Supervision.title} file={Supervision.default} />
-      <Article title={Memberships.title} file={Memberships.default} />
+      <Article
+        title="Supervision & Supervisor Ratios"
+        file={Supervision.default}
+      />
+      <Article title="Membership Guide" file={Memberships.default} />
       <Footer />
     </div>
   );
