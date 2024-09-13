@@ -125,7 +125,7 @@ const DuesCalculator = () => {
       <div className="flex w-4/5 items-center justify-around gap-5 rounded-2xl p-3 dark:bg-slate-800 max-lg:flex-col">
         <div className="flex flex-col items-center justify-center gap-5">
           <h2 className="font-semibold">Bouldering</h2>
-          <div className="flex items-center justify-center gap-5 text-center">
+          <div className="flex items-center justify-center gap-5 text-center max-md:flex-col">
             <div className="flex flex-col gap-1">
               <h3>Adult</h3>
               <p
@@ -148,7 +148,7 @@ const DuesCalculator = () => {
         </div>
         <div className="flex flex-col items-center justify-center gap-5">
           <h3 className="font-semibold">Tall Walls</h3>
-          <div className="flex items-center justify-center gap-5 text-center">
+          <div className="flex items-center justify-center gap-5 text-center max-md:flex-col">
             <div className="flex flex-col gap-1">
               <h3>Adult</h3>
               <p

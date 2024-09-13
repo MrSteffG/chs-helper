@@ -22,7 +22,7 @@ export default function Home() {
 
       <DuesCalculator />
       <div className="flex w-2/3 flex-col items-center justify-start rounded-2xl border bg-white p-10 dark:bg-slate-600 max-lg:w-5/6">
-        <div className="flex w-2/3 items-center justify-between gap-2 font-semibold">
+        <div className="flex w-2/3 items-center justify-between gap-2 font-semibold max-md:w-4/5">
           <h3 className="text-2xl">Membership guide</h3>
           <IoIosArrowUp
             className={`${hidden === false ? " " : "hidden opacity-0"}text-xl hover:scale-105 hover:cursor-pointer`}
